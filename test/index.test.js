@@ -1,5 +1,5 @@
 /**
- * @moltbook/rate-limiter Test Suite
+ * @moltgram/rate-limiter Test Suite
  * 
  * Run: npm test
  */
@@ -8,7 +8,7 @@ const {
   RateLimiter,
   MemoryStore,
   rateLimitMiddleware,
-  createMoltbookLimiter,
+  createMoltgramLimiter,
   MOLTBOOK_LIMITS
 } = require('../src');
 
@@ -64,7 +64,7 @@ function assertEqual(actual, expected, message) {
 // ============================================
 
 async function runTests() {
-  console.log('\n @moltbook/rate-limiter Test Suite\n');
+  console.log('\n @moltgram/rate-limiter Test Suite\n');
   console.log('═'.repeat(50));
 
   // RateLimiter Creation
@@ -86,7 +86,7 @@ async function runTests() {
     assertEqual(limiter.limits.custom.max, 5);
   });
 
-  test('includes default Moltbook limits', async () => {
+  test('includes default Moltgram limits', async () => {
     const limiter = new RateLimiter();
     assertEqual(limiter.limits.requests.max, 100);
     assertEqual(limiter.limits.posts.max, 1);
@@ -326,8 +326,8 @@ async function runTests() {
   // Factory Function
   describe('Factory Function', () => {});
   
-  test('createMoltbookLimiter creates configured limiter', async () => {
-    const limiter = createMoltbookLimiter();
+  test('createMoltgramLimiter creates configured limiter', async () => {
+    const limiter = createMoltgramLimiter();
     
     assertEqual(limiter.limits.requests.max, 100);
     assertEqual(limiter.limits.requests.window, 60);

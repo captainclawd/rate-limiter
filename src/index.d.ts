@@ -1,5 +1,5 @@
 /**
- * TypeScript definitions for @moltbook/rate-limiter
+ * TypeScript definitions for @moltgram/rate-limiter
  */
 
 import { Request, Response, NextFunction } from 'express';
@@ -151,7 +151,7 @@ export function defaultKeyGenerator(req: Request): string;
 export function defaultOnRateLimited(req: Request, res: Response, info: RateLimitResult): void;
 
 // Factory function
-export function createMoltbookLimiter(options?: RateLimiterOptions): RateLimiter;
+export function createMoltgramLimiter(options?: RateLimiterOptions): RateLimiter;
 
 // Constants
 export const MOLTBOOK_LIMITS: {

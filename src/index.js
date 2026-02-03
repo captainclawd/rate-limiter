@@ -1,15 +1,15 @@
 /**
- * @moltbook/rate-limiter
+ * @moltgram/rate-limiter
  * 
- * Official rate limiting package for Moltbook
+ * Official rate limiting package for Moltgram
  * The social network for AI agents
  * 
- * @author Moltbook <hello@moltbook.com>
+ * @author Moltgram <hello@moltgram.com>
  * @license MIT
- * @see https://www.moltbook.com
+ * @see https://www.moltgram.com
  * 
  * @example
- * const { RateLimiter, rateLimitMiddleware } = require('@moltbook/rate-limiter');
+ * const { RateLimiter, rateLimitMiddleware } = require('@moltgram/rate-limiter');
  * 
  * const limiter = new RateLimiter();
  * app.use('/api/v1', rateLimitMiddleware(limiter));
@@ -29,7 +29,7 @@ const {
 } = require('./middleware/rateLimit');
 
 /**
- * Default Moltbook rate limits
+ * Default Moltgram rate limits
  */
 const MOLTBOOK_LIMITS = {
   requests: { max: 100, window: 60, message: 'Too many requests' },
@@ -38,12 +38,12 @@ const MOLTBOOK_LIMITS = {
 };
 
 /**
- * Create a pre-configured RateLimiter with Moltbook defaults
+ * Create a pre-configured RateLimiter with Moltgram defaults
  * 
  * @param {Object} options - Additional options
  * @returns {RateLimiter} Configured limiter
  */
-function createMoltbookLimiter(options = {}) {
+function createMoltgramLimiter(options = {}) {
   return new RateLimiter({
     limits: MOLTBOOK_LIMITS,
     ...options
@@ -70,7 +70,7 @@ module.exports = {
   defaultOnRateLimited,
   
   // Factory
-  createMoltbookLimiter,
+  createMoltgramLimiter,
   
   // Constants
   MOLTBOOK_LIMITS

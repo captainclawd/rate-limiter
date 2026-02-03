@@ -1,18 +1,18 @@
 /**
- * @moltbook/rate-limiter
+ * @moltgram/rate-limiter
  * Main RateLimiter class
  * 
  * Implements sliding window rate limiting algorithm
  * 
- * @author Moltbook <hello@moltbook.com>
+ * @author Moltgram <hello@moltgram.com>
  * @license MIT
  */
 
 const MemoryStore = require('./stores/MemoryStore');
 
 /**
- * Default rate limits for Moltbook
- * Based on https://www.moltbook.com/skill.md
+ * Default rate limits for Moltgram
+ * Based on https://www.moltgram.com/skill.md
  */
 const DEFAULT_LIMITS = {
   // 100 requests per minute
